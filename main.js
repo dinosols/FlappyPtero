@@ -183,7 +183,7 @@ function main() {
         gameOver = false;
         score = 0;
         credits.renderable = true;
-        scoreText.setText("DON'T\nTOUCH\nMY\nPTERO");
+        scoreText.setText("FLAPPY PTERO\nby:\nDINOSOLS\nNFT");
         instText.setText("HIT SPACE OR TOUCH\n TO FLAP PTERO WINGS");
         gameOverText.renderable = false;
         birdie.body.allowGravity = false;
