@@ -19,14 +19,55 @@
             position: relative;
             overflow: hidden;
         }
-    </style>
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover {
+            background-color: #111;
+        }
     </style>
 </head>
 
 <body>
+    <ul>
+        <li><a class="navbar" href="https://www.dinosols.app">Home</a></li>
+    </ul>
     <div id="screen"></div>
+    <div id="uuid"></div>
     <script src="phaser.min.js"></script>
     <script src="main.js"></script>
+    <script>
+        function create_UUID() {
+            var dt = new Date().getTime();
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = (dt + Math.random() * 16) % 16 | 0;
+                dt = Math.floor(dt / 16);
+                return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+            return uuid;
+        }
+
+        document.onload
+        document.getElementById("uuid").innerHTML = "<p style=\"color: white;margin: 0 auto;position: relative;width:fit-content;\">" + create_UUID() + "</p";
+    </script>
 </body>
 
 </html>
